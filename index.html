@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ::selection {
+            color: white;
+            background-color: black;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        img {
+            width: 500px;
+            height: 500px;
+        }
+
+        header {
+            background-color: black;
+        }
+
+        header nav ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            list-style: none;
+        }
+
+        header nav ul li a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .5s ease;
+        }
+
+        nav ul li a:hover {
+            background: white;
+            color: black;
+        }
+
+        #one {
+            background-color: black;
+            float: left;
+            width: 25%; 
+            height: 100vh;
+            padding: 30px;
+            position: fixed;
+            top: 0;
+        }
+        #one::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        #two {
+            width: 75%;
+            float: right;
+        }
+
+        .navbar h3 {
+            color: white;
+            font-size: 20px;
+        }
+
+        .navbar ul {
+            padding: 25px 0;
+            list-style: none;
+        }
+
+        .navbar ul li a {
+            color: white;
+            padding: 10px 0;
+            /* margin: 10px 0; */
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+        }
+
+        .navbar ul li a:hover {
+            background: white;
+            color: black;
+        }
+        
+        .container {
+            width:calc(100% - 30px);
+            margin: 30px auto;
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 9px -3px rgba(0,0,0,0.88);
+            -webkit-box-shadow: 0px 0px 9px -3px rgba(0,0,0,0.88);
+            -moz-box-shadow: 0px 0px 9px -3px rgba(0,0,0,0.88);
+        }
+
+        h4 {
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .flex {
+            display: flex;
+            align-items: start;
+            gap: 30px;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        .flex img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin-bottom: 10px;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .card .card-col {
+            background-color: rgb(102, 207, 252);
+            padding: 20px 30px;
+            border-radius: 10px;
+        }
+
+        .card .card-col:nth-child(2) {
+            background: rgb(234, 42, 42);
+        }
+
+        .card .card-col:nth-child(3) {
+            background: rgb(65, 255, 65);
+        }
+
+        .card .card-col h6 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Gallery */
+        .column {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 20px;
+            padding: 10px;
+
+        }
+        .column .col img {
+            width: 270px;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        /* table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table thead {
+            background: black;
+        }
+
+        th {
+            text-align: left;
+            color: white;
+        }
+
+        td, th {
+            padding: 10px;
+        }
+
+        tbody tr:nth-child(even) {
+            background: rgb(232, 232, 232);
+        }
+
+        td {
+            color: rgb(57, 57, 57);
+        }
+
+        /* form */
+        form {
+            background: rgb(220, 220, 220);
+            padding: 20px;
+        }
+
+        form input, textarea, button, select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            margin: 5px 0 15px 0;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        form label {
+            font-size: 20px;
+        }
+
+        .service-home {
+            margin: 10px 0;
+        }
+
+        .services-check {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 10px;
+        }
+
+        .services-check label {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .services-check input {
+            width: 50px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        button {
+            color: white;
+            font-weight: 600;
+            background: black;
+            transition: .5s ease;
+        }
+
+        button:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        <div class="navbar">
+            <h3>Sidebar Menu</h3>
+            <ul>
+                <li><a href="about">About</a></li>
+                <li><a href="prjects">Projects</a></li>
+                <li><a href="skills">Skills</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="register">Register New Student</a></li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <!-- two -->
+     <div id="two">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="about">About</a></li>
+                    <li><a href="prjects">Projects</a></li>
+                    <li><a href="skills">Skills</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li><a href="register">Register New Student</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <!-- about -->
+        <section>
+            <div class="container">
+                <h4>About Me</h4>
+                <div class="flex">
+                    <img src="./user.png" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat rem porro recusandae iste aut laboriosam eaque. Doloremque dolorum eum, odio quia voluptatum quo soluta facilis maxime modi nemo eius quod nulla ex rerum at iure nisi voluptas. Quos, qui! Distinctio ut iure, cupiditate aspernatur dolores consequatur vel magni fugit nihil esse facilis, tenetur aut consequuntur? Exercitationem nulla iste ipsum et odio facilis debitis, dolores facere eligendi amet nemo culpa quaerat doloribus illo ipsa natus consequuntur vitae eum a repudiandae! Nesciunt deserunt itaque illum aliquid expedita ullam temporibus officiis id possimus voluptas vel in magni reiciendis corrupti inventore nisi hic, cupiditate repudiandae numquam laborum est. Veniam, blanditiis iure, numquam quia, error consequuntur magni saepe laudantium alias recusandae voluptate culpa libero aut natus quidem vero. Reprehenderit laboriosam tempore minima tempora inventore eligendi ratione recusandae culpa officiis necessitatibus, dolorem est fugiat dolorum porro explicabo, aliquam temporibus corrupti? Voluptas enim quas architecto repudiandae, soluta tempora minima quo, quis sit eveniet eligendi, sint vitae suscipit beatae quidem similique dignissimos laboriosam! Sit omnis eveniet illo itaque! Enim consectetur iste natus nihil cum ipsum harum veniam aliquid rerum officia, nisi libero qui repudiandae nam. Minus exercitationem vero esse numquam, quod ipsum earum quidem quisquam iusto? Veritatis, odit!</p>
+                </div>
+            </div>
+        </section>
+    
+         <!-- my projects -->
+        <section>
+            <div class="container">
+                <h4>My projects</h4>
+                <div class="card">
+                    <div class="card-col">
+                        <h6>Project 1</h6>
+                        <p>Details about project 1.</p>
+                    </div>
+                    <div class="card-col">
+                        <h6>Project 2</h6>
+                        <p>Details about project 2.</p>
+                    </div>
+                    <div class="card-col">
+                        <h6>Project 3</h6>
+                        <p>Details about project 3.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- projects gallery -->
+        <section>
+            <div class="container">
+                <h4>My Projects</h4>
+                <div class="column">
+                    <div class="col">
+                        <img src="./career.jfif" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="./project.png" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="./project1.png" alt="">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="col">
+                        <img src="./project2.png" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="./project3.png" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="./project4.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Skills -->
+        <section>
+            <div class="container">
+                <h4>Skills</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Proficiency</th>
+                            <th>Experience (Years)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HTML</td>
+                            <td>Expert</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>CSS</td>
+                            <td>Intermediate</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>Intermediate</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>React</td>
+                            <td>Intermediate/td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    
+        <!-- Contact me -->
+         <section>
+            <div class="container">
+                <h4>Contact Me</h4>
+                <form action="">
+                    <div class="form-group">
+                        <label for="name">Name: </label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject: </label>
+                        <input type="text" name="subject" id="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message: </label>
+                        <textarea name="message" id="message" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Phone (optional): </label>
+                        <input type="tel" name="tel" id="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Preferred Contact Method: </label>
+                        <select name="" id="">
+                            <option value="Email" selected disabled>Email</option>
+                            <option value="Email">javohirsadullayev2024@gmail.com</option>
+                            <option value="Email">javohirsadullayev836@gmail.com</option>
+                            <option value="Email">johndoe@gmail.com</option>
+                        </select>
+                    </div>
+                    <div class="services">
+                        <label for="interested">Services Interested in:</label>
+                        <div class="service-home">
+                            <div class="services-check">
+                                <label>Web Development</label>
+                                <input type="checkbox">
+                            </div>
+                            <div class="services-check">
+                                <label>Graphic Design</label>
+                                <input type="checkbox">
+                            </div>
+                            <div class="services-check">
+                                <label>SEO Services</label>
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                    </div>
+                    <button>Send</button>
+                </form>
+            </div>
+         </section>
+     </div>
+</body>
+</html>
